@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="Casa" class="practica.Casa">
+		<property name="nombreCasa" value="Casa principal"></property>
+		<property name="habitaciones">
+			<list>
+				<bean class="practica.Habitacion">
+					<property name="nombreHabitacion" value="Habitacion 1"></property>
+					<property name="pisoHabitacion" value="1"></property>
+					<property name="tieneVentana" value="true"></property>
+					<property name="persona" ref="persona"></property>
+				</bean>
+				<bean class="practica.Habitacion">
+					<property name="nombreHabitacion" value="Habitacion 2"></property>
+					<property name="pisoHabitacion" value="2"></property>
+					<property name="tieneVentana" value="true"></property>
+					<property name="persona" ref="propietario"></property>
+				</bean>
+			</list>
+		</property>
+		<property name="propietario" ref="propietario"></property>
+	</bean>
+	<bean id="persona" class="practica.Persona">
+		<property name="nombre" value="Manolo García Ramirez"></property>
+	</bean>
+	<bean id="propietario" class="practica.Persona">
+		<property name="nombre" value="Alejandro Martínez Iglesias"></property>
+	</bean>
+</beans>
